@@ -1,7 +1,6 @@
-server:
-  port: 5002
-
 spring:
+  application:
+    name: airline-core-service
   datasource:
     url: jdbc:mysql://localhost:3306/airline_core_service
     username: root
@@ -11,9 +10,10 @@ spring:
       ddl-auto: update
     show-sql: true
 
+server:
+  port: 5002
+
 eureka:
   client:
-    register-with-eureka: true
-    fetch-registry: true
-  instance:
-    prefer-ip-address: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
