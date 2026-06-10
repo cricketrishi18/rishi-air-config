@@ -1,0 +1,28 @@
+server:
+  port: 5010
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/airline_payment_service
+    username: root
+    password: Rishi@18
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+
+razorpay:
+  api:
+    key: rzp_test_SuTXX8VuTuhd0c
+    secret: 7KNyql5dFwNWDMrcflQafWB4
+
+  callback:
+    base-url: http://localhost:5173
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
