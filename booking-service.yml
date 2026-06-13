@@ -9,20 +9,8 @@ spring:
 
   kafka:
     bootstrap-servers: localhost:9092
-
-    # १. प्रोड्युसर ब्लॉक (मेसेज पाठवण्यासाठी)
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-
-    # २. कडक बदल: कंझ्युमर ब्लॉक परत जोडला (ज्यामुळे 'kafkaConsumerConfig' शांत होईल)
     consumer:
       group-id: booking-service-group
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties:
-        spring.json.trusted.packages: "com.rishi.event"
 
 eureka:
   client:
